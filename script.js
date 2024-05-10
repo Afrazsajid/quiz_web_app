@@ -10,6 +10,7 @@ const nextButton = document.querySelector('#next-button');
 const backButton = document.querySelector('#back-button');
 const resultsContainer = document.querySelector('.results-container');
 const resultsList = document.querySelector('#results-list');
+const section=document.querySelector("#result_cont")
 
 // API data example
 let quizData 
@@ -70,6 +71,8 @@ function renderQuestion(attepmt=false) {
   
 
   function renderResults() {
+
+    section.scrollIntoView({ behavior: 'smooth' })
     const resultsHTML = quizData.map((question, index) => {
     const cor_ans_ind=question.correct_answer
     const correctAnswer = 'answer_' + letterToNumber(question.correct_answer.split('_')[1]);

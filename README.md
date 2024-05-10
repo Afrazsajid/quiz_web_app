@@ -40,4 +40,10 @@ Hey there! I'm excited to share with you a small project I built using a cool AP
 ----------
 
 This project was a fun way to practice my development skills and share something with my class. If you have any suggestions or ideas for future features, please let me know! I'm always looking for ways to improve and expand this project.
+
+##known issue
+----------
+*if answer has html content it not display as text
+*user answer is not showing property even though the answer is right showing right or worng by color logic working smoothly but not displaying correct user answer it be resolve 😉 (no tension)
+
  

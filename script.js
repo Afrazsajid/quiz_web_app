@@ -10,7 +10,7 @@ const nextButton = document.querySelector('#next-button');
 const backButton = document.querySelector('#back-button');
 const resultsContainer = document.querySelector('.results-container');
 const resultsList = document.querySelector('#results-list');
-const section=document.querySelector("#result_cont")
+const section=document.querySelector("#result_cont_down")
 
 // API data example
 let quizData 

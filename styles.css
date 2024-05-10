@@ -1,0 +1,143 @@
+
+:root{
+    --color1:rgb(104, 207, 238);
+    --color2:rgb(5, 111, 198);
+    --color1hover:#005c76
+
+
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.quiz-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.timer {
+    font-size: 18px;
+    font-weight: bold;
+    color: #666;
+}
+
+.quiz-questions {
+    margin-top: 40px;
+}
+
+.question-card {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.option-button {
+    width: 100%;
+    margin: 10px 0px;
+    padding: 10px 0px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color1);
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+.option-button:hover {
+    background-color:var(--color1hover);
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.nav-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color2);
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+.results-container {
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#results-header {
+    margin-bottom: 10px;
+}
+
+#results-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.result-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.green {
+    background-color: #C6EFCE;
+    border:1px solid  #53e971;
+}
+
+.red {
+    background-color: #F5C6CB;
+    border: 1px solid #ff3e52;
+}
+
+.correct{
+    background-color: #3e8e41;
+}
+
+.inccorect{
+    background-color: rgb(235, 36, 36);
+}
+
+#restart{
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+#restart p{
+    margin-left: 6px;
+
+}
+
+.no{
+    display: none;
+}

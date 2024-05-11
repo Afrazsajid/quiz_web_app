@@ -69,6 +69,11 @@ body {
     background-color:var(--color1hover);
 }
 
+.clicked{
+    background-color:var(--color1hover)
+
+}
+
 .nav-buttons {
     display: flex;
     justify-content: space-between;
@@ -140,4 +145,9 @@ body {
 
 .no{
     display: none;
+}
+
+code{
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
 }

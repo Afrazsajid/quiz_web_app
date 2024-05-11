@@ -3,6 +3,13 @@ function letterToNumber(letter) {
     return letter.toLowerCase().charCodeAt(0) - 96;
   }
 
+  function escapeHtmlTags(str) {
+    return str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  const rootStyles = getComputedStyle(document.documentElement);
+  const btn_color = rootStyles.getPropertyValue('--color2')
+
+
 const quizContainer = document.querySelector('.quiz-container');
 const questionText = document.querySelector('#question-text');
 const options = document.querySelectorAll('.option-button');
@@ -17,7 +24,7 @@ let quizData
   
   let currentQuestion = 0;
   let score = 0;
-  let timer = 600; // 10 minutes in seconds
+  let timer = 10; // 10 minutes in seconds
 
   let slected_opt_id_lst=[]
   
@@ -46,11 +53,12 @@ function renderQuestion(attepmt=false) {
     const question = quizData[currentQuestion];
     questionText.textContent = question.question;
     options.forEach((option, index) => {
-        option.classList.remove('correct')
-        option.classList.remove('incorrect')
+        option.classList.remove('clicked')
+
       option.textContent =(Object.values(question.answers)[index]);
     //   console.log(Object.values(question.answers)[index])
       option.id = `answer_${index + 1}`; // Set the ID of the option button
+      
       ;
     });
 
@@ -58,6 +66,8 @@ function renderQuestion(attepmt=false) {
   // Function to handle option selection
   function handleOptionSelection(event) {
     slected_opt_id_lst[currentQuestion]=(event.target.id)
+    renderQuestion()
+    event.target.classList.toggle("clicked")
     // console.log(currentQuestion)
     
     // console.log(slected_opt_id_lst)
@@ -66,9 +76,8 @@ function renderQuestion(attepmt=false) {
 
 
 
-    renderQuestion();
+    ;
   }
-  
 
   function renderResults() {
 
@@ -80,9 +89,9 @@ function renderQuestion(attepmt=false) {
       const resultClass = userAnswer === correctAnswer ? "green" : "red";
       return `
         <div class="result-item ${resultClass}">
-          <p>Question : ${question.question}</p>
-          <p>Your answer: ${document.getElementById(userAnswer).textContent}</p>
-          <p>Correct answer: ${question.answers[cor_ans_ind]}</p>
+          <>Question :<code>${escapeHtmlTags(question.question)}</code></p>
+          <>Your answer: <code>${escapeHtmlTags(document.getElementById(userAnswer).textContent)}</code></p>
+          <>Correct answer: <code>${escapeHtmlTags(question.answers[cor_ans_ind])}</code></p>
         </div>
       `;
     }).join("");
@@ -136,8 +145,24 @@ function renderQuestion(attepmt=false) {
       const seconds = timer % 60;
       document.querySelector("#timer").textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
       if (timer === 0) {
-        alert("You are out of time! 😞");
-        renderResults();
+        Swal.fire({
+        
+          html: `<img src="https://c.tenor.com/1ApT-pZWryIAAAAC/tenor.gif" alt="Custom icon">`,
+          title: "Time out",
+          
+          confirmButtonText: 'Try Again',
+          confirmButtonColor: btn_color,
+
+ 
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.reload()
+            
+            
+          } 
+        });
+
+        ;
       }
     }, 1000);
   }

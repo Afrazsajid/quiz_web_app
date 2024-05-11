@@ -34,7 +34,7 @@ let quizData
 
 let currentQuestion = 0;
 let score = 0;
-let timer = 300; 
+let timer = 180; 
 
 let slected_opt_id_lst = []
 

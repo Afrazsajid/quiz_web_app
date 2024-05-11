@@ -26,12 +26,15 @@ const resultsContainer = document.querySelector('.results-container');
 const resultsList = document.querySelector('#results-list');
 const section = document.querySelector("#result_cont_down")
 
+
+let result=false
+
 // API data example
 let quizData
 
 let currentQuestion = 0;
 let score = 0;
-let timer = 100; // 10 minutes in seconds
+let timer = 20; // 10 minutes in seconds
 
 let slected_opt_id_lst = []
 
@@ -87,6 +90,7 @@ function handleOptionSelection(event) {
 }
 
 function renderResults() {
+  result=true
 
   section.scrollIntoView({ behavior: 'smooth' })
   const resultsHTML = quizData.map((question, index) => {
@@ -153,6 +157,12 @@ function handleBackButtonClick() {
 
 function startTimer() {
   setInterval(() => {
+
+    if (result!==false){
+
+      clearInterval(intervalId); // Clear the interval when timer is 0
+
+    }
 
      if (timer > 0) { 
       timer--;

@@ -34,7 +34,7 @@ let quizData
 
 let currentQuestion = 0;
 let score = 0;
-let timer = 20; // 10 minutes in seconds
+let timer = 90; 
 
 let slected_opt_id_lst = []
 

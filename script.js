@@ -30,7 +30,13 @@ let quizData
 
 let currentQuestion = 0;
 let score = 0;
+<<<<<<< HEAD
 let timer; // Timer variable for each question
+=======
+let timer = 180; 
+
+let slected_opt_id_lst = []
+>>>>>>> 0716552a490318693b94b640be37d78a6f0320a5
 
 let selectedOptIdList = []
 

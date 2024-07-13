@@ -13,12 +13,13 @@ Hey there! I'm excited to share with you a small project I built using a cool AP
 * Timer feature to keep track of time spent on each question
 * Event listeners for option elements to handle user input
 * Basic rendering of questions and options
+* Implemented a feature to restart the app when the timer runs out
+* Add pre-built beautiful alerts for a better user experience
 
 ## Remaining Features
 --------------------
 
-* Implement a feature to close the app when the timer runs out
-* Add pre-built beautiful alerts for a better user experience
+
 * Add a feature to choose categories for the questions
 
 ## Future Features (Suggestions Welcome!)
@@ -35,15 +36,13 @@ Hey there! I'm excited to share with you a small project I built using a cool AP
 * Built using HTML, CSS, and JavaScript
 * Utilizes the [Quiz API](https://quizapi.io/) for question data
 * Uses async/await for handling promises and API requests
+*Used [sweetalert2](https://sweetalert2.github.io/) for amazing alerts
 
 ## Conclusion
 ----------
 
 This project was a fun way to practice my development skills and share something with my class. If you have any suggestions or ideas for future features, please let me know! I'm always looking for ways to improve and expand this project.
 
-##known issue
-----------
-*if answer has html content it not display as text
-*user answer is not showing property even though the answer is right showing right or worng by color logic working smoothly but not displaying correct user answer it be resolve 😉 (no tension)
+
 
  

@@ -1,6 +1,3 @@
-
-
-
 function numberToLetter(num) {
   var alphabet = 'abcdefghijklmnopqrstuvwxyz';
   return alphabet[num - 1];
@@ -26,124 +23,121 @@ const resultsContainer = document.querySelector('.results-container');
 const resultsList = document.querySelector('#results-list');
 const section = document.querySelector("#result_cont_down")
 
-
-let result=false
+let result = false
 
 // API data example
 let quizData
 
 let currentQuestion = 0;
 let score = 0;
-let timer = 20; // 10 minutes in seconds
+let timer; // Timer variable for each question
 
-let slected_opt_id_lst = []
-
+let selectedOptIdList = []
 
 async function fetchQuestionData() {
-  fetch("https://quizapi.io/api/v1/questions?apiKey=lV4E5MUmNEJi0wLlsoE1mupL1d84QeVUuYQcXni9&difficulty=Medium&limit=12&tags=HTML")
-    .then(response => response.json())
+  fetch('question.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      return response.json();
+    })
     .then(data => {
-
-
       quizData = data;
-      renderQuestion()
-        //   onsole.log(quizData);
-        ;
+      renderQuestion();
     })
     .catch(error => {
       console.error('Error:', error);
     });
-
 }
 
-
-function renderQuestion(attepmt = false) {
-
-
+function renderQuestion() {
   const question = quizData[currentQuestion];
   questionText.textContent = question.question;
   options.forEach((option, index) => {
-    option.classList.remove('clicked')
+    option.classList.remove('clicked', 'correct', 'incorrect');
+    option.classList.add('blue');
 
-    option.textContent = (Object.values(question.answers)[index]);
-    //   console.log(Object.values(question.answers)[index])
-    option.id = `answer_${index + 1}`; // Set the ID of the option button
+    option.textContent = Object.values(question.answers)[index];
+    option.id = `answer_${index + 1}`;
+  });
+  startQuestionTimer();
+}
 
-    ;
+function handleOptionSelection(event) {
+  const selectedOption = event.target;
+  const correctAnswer = quizData[currentQuestion].correct_answer;
+  const correctAnswerId = 'answer_' + letterToNumber(correctAnswer.split('_')[1]);
+
+  selectedOptIdList[currentQuestion] = selectedOption.id;
+
+  options.forEach(option => {
+    option.addEventListener('click', handleOptionSelection);
+
+    if (option.id === correctAnswerId) {
+      option.classList.add('correct');
+    } else {
+      option.classList.add('incorrect');
+    }
   });
 
-}
-// Function to handle option selection
-function handleOptionSelection(event) {
-  slected_opt_id_lst[currentQuestion] = (event.target.id)
-  renderQuestion()
-  event.target.classList.toggle("clicked")
-    // console.log(currentQuestion)
+  selectedOption.classList.remove('blue')
 
-    // console.log(slected_opt_id_lst)
+  if (selectedOption.id === correctAnswerId) {
+    selectedOption.classList.add('correct');
+  } else {
+    selectedOption.classList.add('incorrect');
+  }
 
-
-
-
-
-    ;
+  clearInterval(timer);
 }
 
 function renderResults() {
-  result=true
+  result = true;
 
-  section.scrollIntoView({ behavior: 'smooth' })
+  section.scrollIntoView({ behavior: 'smooth' });
+  console.log(quizData)
   const resultsHTML = quizData.map((question, index) => {
-    const cor_ans_ind = question.correct_answer
-    const correctAnswer = 'answer_' + letterToNumber(question.correct_answer.split('_')[1]);
-    let userAnswer = slected_opt_id_lst[index];
-    console.log(userAnswer)
+    console.log(question)
     
+    const correctAnswer = 'answer_' + letterToNumber(question.correct_answer.split('_')[1]);
+
+    console.log(index)
+    
+    let userAnswer = selectedOptIdList[index];
+
     const resultClass = userAnswer === correctAnswer ? "green" : "red";
-    userAnswer = userAnswer.replace(/_(\d+)/, function(match, number) {
+    userAnswer = userAnswer.replace(/_(\d+)/, function (match, number) {
       return "_" + numberToLetter(parseInt(number));
     });
-    
+
     return `
         <div class="result-item ${resultClass}">
-          <>Question :<code>${escapeHtmlTags(question.question)}</code></p>
-          <>Your answer: <code>${escapeHtmlTags(question.answers[userAnswer])}</code></p>
-          <>Correct answer: <code>${escapeHtmlTags(question.answers[cor_ans_ind])}</code></p>
+          <p>Question :<code>${escapeHtmlTags(question.question)}</code></p>
+          <p>Your answer: <code>${escapeHtmlTags(question.answers[userAnswer])}</code></p>
+          <p>Correct answer: <code>${escapeHtmlTags(question.answers[question.correct_answer])}</code></p>
         </div>
       `;
   }).join("");
   resultsList.innerHTML = resultsHTML;
-  document.getElementById('restart').addEventListener('click', function (e) {
-    // console.log("j")
-
-
-
-
+  document.getElementById('restart').addEventListener('click', function () {
     window.location.reload();
   });
 }
 
-
-
-
 function handleNextButtonClick(e) {
-  // console.log("h")
-  if ((currentQuestion < quizData.length - 1) && (slected_opt_id_lst.length > currentQuestion)) {
+  if ((currentQuestion < quizData.length - 1) && (selectedOptIdList.length > currentQuestion)) {
     currentQuestion++;
-    renderQuestion()
-
+    renderQuestion();
   } else if (currentQuestion === quizData.length - 1) {
-
-    document.querySelector(".results-container").classList.remove("no")
-
+    document.querySelector(".results-container").classList.remove("no");
     renderResults();
   }
 
   if (currentQuestion > quizData.length - 2) {
-    e.target.textContent = "check result"
+    e.target.textContent = "check result";
   }
 }
-
 
 function handleBackButtonClick() {
   if (currentQuestion > 0) {
@@ -152,72 +146,46 @@ function handleBackButtonClick() {
   }
 }
 
+function startQuestionTimer() {
+  let timeLeft = 20; // 20 seconds per question
+  document.querySelector("#timer").textContent = `${Math.floor(timeLeft / 60)}:${timeLeft % 60}`;
 
-
-
-function startTimer() {
-  setInterval(() => {
-
-    if (result!==false){
-
-      clearInterval(intervalId); // Clear the interval when timer is 0
-
-    }
-
-     if (timer > 0) { 
-      timer--;
-    }else {
-      clearInterval(intervalId); // Clear the interval when timer is 0
-    }
-   
-    const minutes = Math.floor(timer / 60);
-    const seconds = timer % 60;
-    document.querySelector("#timer").textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`
-
-    if (timer === 0) {
+  timer = setInterval(() => {
+    if (timeLeft > 0) {
+      timeLeft--;
+      document.querySelector("#timer").textContent = `${Math.floor(timeLeft / 60)}:${timeLeft % 60}`;
+    } else {
+      clearInterval(timer);
+      selectedOptIdList[currentQuestion] = 0
       Swal.fire({
-
         html: `<img src="https://c.tenor.com/1ApT-pZWryIAAAAC/tenor.gif" alt="Custom icon">`,
         title: "Time out",
-
-        confirmButtonText: 'Try Again',
+        confirmButtonText: 'Next Question',
         confirmButtonColor: btn_color,
         allowOutsideClick: false,
         allowEscapeKey: false,
-
-
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.reload()
-
-
+      }).then(() => {
+        if (currentQuestion < quizData.length - 1) {
+          currentQuestion++;
+          renderQuestion();
+        } else {
+          renderResults();
         }
       });
-      clearInterval(intervalId)
-        ;
     }
-
   }, 1000);
 }
 
 // Initialize quiz
 async function restart() {
-  // console.log("h")
-
   const data = await fetchQuestionData();
-  startTimer()
   if (data && data.length > 0) {
     quizData = data;
-    // console.log(quizData); // Fix the typo here
     renderQuestion();
-    ;
   } else {
     console.error('No data available');
   }
 
-
-
-  // Add event listeners
   options.forEach((option) => {
     option.addEventListener("click", handleOptionSelection);
   });
@@ -225,6 +193,4 @@ async function restart() {
   backButton.addEventListener("click", handleBackButtonClick);
 }
 
-restart()
-
-
+restart();

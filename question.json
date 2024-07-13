@@ -1,0 +1,358 @@
+[
+    {
+      "id": 1,
+      "question": "What is TypeScript?",
+      "description": "Q1. What is TypeScript?\n1. A) A text formatting language\n2. B) A superset of JavaScript\n3. C) A type of database\n4. D) A web server",
+      "answers": {
+        "answer_a": "A text formatting language",
+        "answer_b": "A superset of JavaScript",
+        "answer_c": "A type of database",
+        "answer_d": "A web server",
+        "answer_e": null,
+        "answer_f": null
+      },
+      "multiple_correct_answers": "false",
+      "correct_answers": {
+        "answer_a_correct": "false",
+        "answer_b_correct": "true",
+        "answer_c_correct": "false",
+        "answer_d_correct": "false",
+        "answer_e_correct": "false",
+        "answer_f_correct": "false"
+      },
+      "correct_answer": "answer_b",
+      "explanation": "TypeScript is a superset of JavaScript developed by Microsoft that adds static types to JavaScript.",
+      "tip": null,
+      "tags": [
+        { "name": "TypeScript" }
+      ],
+      "category": "",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 2,
+      "question": "Which command is used to install TypeScript globally?",
+      "description": "Q2. Which command is used to install TypeScript globally?\n1. A) npm install typescript\n2. B) npm install -g typescript\n3. C) npm add typescript\n4. D) npm get typescript",
+      "answers": {
+        "answer_a": "npm install typescript",
+        "answer_b": "npm install -g typescript",
+        "answer_c": "npm add typescript",
+        "answer_d": "npm get typescript",
+        "answer_e": null,
+        "answer_f": null
+      },
+      "multiple_correct_answers": "false",
+      "correct_answers": {
+        "answer_a_correct": "false",
+        "answer_b_correct": "true",
+        "answer_c_correct": "false",
+        "answer_d_correct": "false",
+        "answer_e_correct": "false",
+        "answer_f_correct": "false"
+      },
+      "correct_answer": "answer_b",
+      "explanation": "The correct command to install TypeScript globally is 'npm install -g typescript'.",
+      "tip": null,
+      "tags": [
+        { "name": "TypeScript" }
+      ],
+      "category": "",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 3,
+      "question": "Which file extension is used for TypeScript files?",
+      "description": "Q3. Which file extension is used for TypeScript files?\n1. A) .ts\n2. B) .js\n3. C) .tsx\n4. D) .tscript",
+      "answers": {
+        "answer_a": ".ts",
+        "answer_b": ".js",
+        "answer_c": ".tsx",
+        "answer_d": ".tscript",
+        "answer_e": null,
+        "answer_f": null
+      },
+      "multiple_correct_answers": "false",
+      "correct_answers": {
+        "answer_a_correct": "true",
+        "answer_b_correct": "false",
+        "answer_c_correct": "false",
+        "answer_d_correct": "false",
+        "answer_e_correct": "false",
+        "answer_f_correct": "false"
+      },
+      "correct_answer": "answer_a",
+      "explanation": "TypeScript files use the extension '.ts'.",
+      "tip": null,
+      "tags": [
+        { "name": "TypeScript" }
+      ],
+      "category": "",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 4,
+      "question": "How do you compile a TypeScript file named app.ts?",
+      "description": "Q4. How do you compile a TypeScript file named app.ts?\n1. A) tsc app.js\n2. B) tsc app.ts\n3. C) typescript app.ts\n4. D) compile app.ts",
+      "answers": {
+        "answer_a": "tsc app.js",
+        "answer_b": "tsc app.ts",
+        "answer_c": "typescript app.ts",
+        "answer_d": "compile app.ts",
+        "answer_e": null,
+        "answer_f": null
+      },
+      "multiple_correct_answers": "false",
+      "correct_answers": {
+        "answer_a_correct": "false",
+        "answer_b_correct": "true",
+        "answer_c_correct": "false",
+        "answer_d_correct": "false",
+        "answer_e_correct": "false",
+        "answer_f_correct": "false"
+      },
+      "correct_answer": "answer_b",
+      "explanation": "To compile a TypeScript file named app.ts, you use the command 'tsc app.ts'.",
+      "tip": null,
+      "tags": [
+        { "name": "TypeScript" }
+      ],
+      "category": "",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 5,
+      "question": "Which keyword is used to define a variable in TypeScript?",
+      "description": "Q5. Which keyword is used to define a variable in TypeScript?\n1. A) var\n2. B) let\n3. C) const\n4. D) All of the above",
+      "answers": {
+        "answer_a": "var",
+        "answer_b": "let",
+        "answer_c": "const",
+        "answer_d": "All of the above",
+        "answer_e": null,
+        "answer_f": null
+      },
+      "multiple_correct_answers": "false",
+      "correct_answers": {
+        "answer_a_correct": "false",
+        "answer_b_correct": "true",
+        "answer_c_correct": "false",
+        "answer_d_correct": "false",
+        "answer_e_correct": "false",
+        "answer_f_correct": "false"
+      },
+      "correct_answer": "answer_b",
+      "explanation": "In TypeScript, the 'let' keyword is used to define variables.",
+      "tip": null,
+      "tags": [
+        { "name": "TypeScript" }
+      ],
+      "category": "",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 6,
+      "question": "How do you specify the type of a variable in TypeScript?",
+      "description": "Q6. How do you specify the type of a variable in TypeScript?\n1. A) let x = 5\n2. B) let x: number = 5\n3. C) let number x = 5\n4. D) let x number = 5",
+      "answers": {
+        "answer_a": "let x = 5",
+        "answer_b": "let x: number = 5",
+        "answer_c": "let number x = 5",
+        "answer_d": "let x number = 5",
+        "answer_e": null,
+        "answer_f": null
+      },
+      "multiple_correct_answers": "false",
+      "correct_answers": {
+        "answer_a_correct": "false",
+        "answer_b_correct": "true",
+        "answer_c_correct": "false",
+        "answer_d_correct": "false",
+        "answer_e_correct": "false",
+        "answer_f_correct": "false"
+      },
+      "correct_answer": "answer_b",
+      "explanation": "To specify the type of a variable in TypeScript, you use syntax like 'let x: number = 5'.",
+      "tip": null,
+      "tags": [
+        { "name": "TypeScript" }
+      ],
+      "category": "",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 7,
+      "question": "What will be the output of the following TypeScript code?\nlet isDone: boolean = false;\nconsole.log(typeof isDone);",
+      "description": "Q7. What will be the output of the following TypeScript code?\nlet isDone: boolean = false;\nconsole.log(typeof isDone);\n1. A) \"string\"\n2. B) \"boolean\"\n3. C) \"number\"\n4. D) \"object\"",
+      "answers": {
+        "answer_a": "\"string\"",
+        "answer_b": "\"boolean\"",
+        "answer_c": "\"number\"",
+        "answer_d": "\"object\"",
+        "answer_e": null,
+        "answer_f": null
+      },
+      "multiple_correct_answers": "false",
+      "correct_answers": {
+        "answer_a_correct": "false",
+        "answer_b_correct": "true",
+        "answer_c_correct": "false",
+        "answer_d_correct": "false",
+        "answer_e_correct": "false",
+        "answer_f_correct": "false"
+      },
+      "correct_answer": "answer_b",
+      "explanation": "The output of 'console.log(typeof isDone);' will be 'boolean' because 'isDone' is of type boolean.",
+      "tip": null,
+      "tags": [
+        { "name": "TypeScript" }
+      ],
+      "category": "",
+      "difficulty": "Medium"
+    },
+
+
+    {
+        "id": 9,
+        "question": "What is the purpose of the tsconfig.json file?",
+        "description": "Q9. What is the purpose of the tsconfig.json file?\n1. A) To define the configuration for the TypeScript compiler.\n2. B) To list all TypeScript files in the project.\n3. C) To set environment variables for TypeScript.\n4. D) To configure TypeScript package dependencies.",
+        "answers": {
+          "answer_a": "To define the configuration for the TypeScript compiler.",
+          "answer_b": "To list all TypeScript files in the project.",
+          "answer_c": "To set environment variables for TypeScript.",
+          "answer_d": "To configure TypeScript package dependencies.",
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "true",
+          "answer_b_correct": "false",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": "The tsconfig.json file is used to define the configuration for the TypeScript compiler.",
+        "tip": null,
+        "tags": [
+          { "name": "TypeScript" }
+        ],
+        "category": "",
+        "difficulty": "Medium"
+      },
+      {
+        "id": 10,
+        "question": "How do you define a function in TypeScript that takes a number and returns a string?",
+        "description": "Q10. How do you define a function in TypeScript that takes a number and returns a string?\n1. A) function foo(num): string\n2. B) function foo(num: number): string\n3. C) function foo(num: number) => string\n4. D) function foo(num: number): void",
+        "answers": {
+          "answer_a": "function foo(num): string",
+          "answer_b": "function foo(num: number): string",
+          "answer_c": "function foo(num: number) => string",
+          "answer_d": "function foo(num: number): void",
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "false",
+          "answer_b_correct": "true",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_b",
+        "explanation": "To define a function in TypeScript that takes a number and returns a string, you use syntax like 'function foo(num: number): string'.",
+        "tip": null,
+        "tags": [
+          { "name": "TypeScript" }
+        ],
+        "category": "",
+        "difficulty": "Medium"
+      },
+      {
+        "id": 11,
+        "question": "What will be the output of the following TypeScript code?\nlet numbers: number[] = [1, 2, 3];\nnumbers.push(4);\nconsole.log(numbers);",
+        "description": "Q11. What will be the output of the following TypeScript code?\nlet numbers: number[] = [1, 2, 3];\nnumbers.push(4);\nconsole.log(numbers);\n1. A) [1, 2, 3]\n2. B) [1, 2, 3, 4]\n3. C) [4, 1, 2, 3]\n4. D) Error",
+        "answers": {
+          "answer_a": "[1, 2, 3]",
+          "answer_b": "[1, 2, 3, 4]",
+          "answer_c": "[4, 1, 2, 3]",
+          "answer_d": "Error",
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "false",
+          "answer_b_correct": "true",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_b",
+        "explanation": "The output of 'console.log(numbers);' will be [1, 2, 3, 4] because 'push(4)' adds the number 4 to the end of the array 'numbers'.",
+        "tip": null,
+        "tags": [
+          { "name": "TypeScript" }
+        ],
+        "category": "",
+        "difficulty": "Medium"
+      },
+      {
+        "id": 12,
+        "question": "Which TypeScript feature allows you to specify default values for function parameters?",
+        "description": "Q12. Which TypeScript feature allows you to specify default values for function parameters?\n1. A) Optional parameters\n2. B) Rest parameters\n3. C) Default parameters\n4. D) Named parameters",
+        "answers": {
+          "answer_a": "Optional parameters",
+          "answer_b": "Rest parameters",
+          "answer_c": "Default parameters",
+          "answer_d": "Named parameters",
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "false",
+          "answer_b_correct": "false",
+          "answer_c_correct": "true",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_c",
+        "explanation": "Default parameters allow you to specify default values for function parameters in TypeScript.",
+        "tip": null,
+        "tags": [
+          { "name": "TypeScript" }
+        ],
+        "category": "",
+        "difficulty": "Medium"
+      },
+      
+        {"id": 13,
+        "question": "What will be the output of the following TypeScript code?\nfunction greet(name: string, age: number = 25): string {\n  return `Hello, my name is ${name} and I am ${age} years old.`;\n}\nconsole.log(greet(\"John\"));",
+        "description": "Q13. What will be the output of the following TypeScript code?\nfunction greet(name: string, age: number = 25): string {\n  return `Hello, my name is ${name} and I am ${age} years old.`;\n}\nconsole.log(greet(\"John\"));\n1. A) Hello, my name is John and I am years old.\n2. B) Hello, my name is John and I am 25 years old.\n3. C) Hello, my name is John and I am undefined years old.\n4. D) Hello, my name is John and I am NaN years old.",
+        "answers": {
+          "answer_a": "Hello, my name is John and I am years old.",
+          "answer_b": "Hello, my name is John and I am 25 years old.",
+          "answer_c": "Hello, my name is John and I am undefined years old.",
+          "answer_d": "Hello, my name is John and I am NaN years old.",
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "false",
+          "answer_b_correct": "true",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        }
+    }
+]
+
+  
